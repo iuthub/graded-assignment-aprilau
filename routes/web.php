@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Controller@index');
+
+Route::resource('tasks','TasksController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
